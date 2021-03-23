@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIPHY Search App</title>
+    <style>
+        body {
+            background-color: #0e141b;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 80%;
+            justify-content: space-between;
+            margin: 0 auto;
+            min-height: 300px;
+        }
+
+        .item {
+            width: 30.33%;
+            height: 400px;
+            margin: 10px;
+            background-size: contain !important;
+        }
+
+        #searchForm {
+            text-align: center;
+            margin: 50px;
+        }
+
+        #searchText {
+            border: 1px solid #ccc;
+            width: 40%;
+            border-radius: 3rem;
+            padding: 15px 25px;
+        }
+
+        #searchText:focus {
+            outline: inherit;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin: 30px;
+        }
+
+        .previous,
+        .next {
+            text-transform: capitalize !important;
+            color: #ff5277 !important;
+            background-color: transparent;
+            border: 1px solid #ff5277;
+            border-radius: 4px;
+            padding: 0.75rem 2rem;
+            line-height: 1;
+            cursor: pointer;
+            -webkit-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+            margin: 15px;
+        }
+
+
+
+
+        .previous,
+        .next:hover {
+            background-color: rgba(255, 41, 87, 0.1) !important;
+        }
+
+        .previous,
+        .next:focus {
+            outline: inherit;
+        }
+
+        .loader {
+            font-size: 10px;
+            margin: 50px auto;
+            text-indent: -9999em;
+            width: 11em;
+            height: 11em;
+            border-radius: 50%;
+            background: #ff5277;
+            background: -moz-linear-gradient(left, #ff5277 10%, rgba(255, 82, 119, 0) 42%);
+            background: -webkit-linear-gradient(left, #ff5277 10%, rgba(255, 82, 119, 0) 42%);
+            background: -o-linear-gradient(left, #ff5277 10%, rgba(255, 82, 119, 0) 42%);
+            background: -ms-linear-gradient(left, #ff5277 10%, rgba(255, 82, 119, 0) 42%);
+            background: linear-gradient(to right, #ff5277 10%, rgba(255, 82, 119, 0) 42%);
+            position: relative;
+            -webkit-animation: load3 1.4s infinite linear;
+            animation: load3 1.4s infinite linear;
+            -webkit-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            transform: translateZ(0);
+        }
+
+        .loader:before {
+            width: 50%;
+            height: 50%;
+            background: #ff5277;
+            border-radius: 100% 0 0 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: '';
+        }
+
+        .loader:after {
+            background: #ffffff;
+            width: 75%;
+            height: 75%;
+            border-radius: 50%;
+            content: '';
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        @-webkit-keyframes load3 {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes load3 {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <form id="searchForm">
+            <input type="text" id="searchText" placeholder="Search Here...">
+        </form>
+        <div class="container" id="root"></div>
+
+        <div class="btn-container">
+            <button class="previous">Prev</button>
+            <button class="next">Next</button>
+        </div>
+    </section>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>

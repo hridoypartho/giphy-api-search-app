@@ -1,0 +1,17 @@
+{
+  "name": "giphy-search-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel serve index.html",
+    "build": "parcel build index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "debounce": "^1.2.1"
+  }
+}
